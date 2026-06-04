@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import LoginLeftSide from './LoginLeftSide'
-import { ArrowLeftIcon, EyeIcon, Link } from 'lucide-react'
+import { ArrowLeftIcon, EyeIcon, Link, Loader2Icon } from 'lucide-react'
 
 const LoginForm = ({role,title,subtitle}) => {
 
@@ -19,9 +19,7 @@ const LoginForm = ({role,title,subtitle}) => {
         <LoginLeftSide/>
         <div className='flex-1 flex items-center justify-center p-6 sm:p-12 bg-white'>
           <div className='w-full max-w-md animate-fade-in'>
-            <Link to='/login' className='inline-flex items-center gap-2 text-slate-400 hover:text-slate-700 text-sm mb-10 transition-colors'>
-              <ArrowLeftIcon size={16}/>Back to portals
-            </Link>
+            <Link to='/login' className='inline-flex items-center gap-2 text-slate-400 hover:text-slate-700 text-sm mb-10 transition-colors'><ArrowLeftIcon size={16}/> Back to portals</Link>
 
             <div className='mb-8'>
               <h1 className='text-2xl sm:text-3xl font-medium text-zinc-800'>{title}</h1>
@@ -52,8 +50,9 @@ const LoginForm = ({role,title,subtitle}) => {
 
                 <button type='submit' 
                 disabled={loading}
-                className='w-full py-3 bg-linear-to-r from-indigo-600 to-indigo-500 text-white rounded-md text-sm font-semibold hover:from-indigo-700 hover:to-indigo-600 disabled:opacity-50 transition-all duration-200 shadow-lg shadow-indigo-500/25 active:sacle-[0.98] flex items-center justify-center'>
-                  {loading ? 'Signing in...' : 'Sign in'}
+                className='w-full py-3 bg-linear-to-r from-indigo-600 to-indigo-500 text-white rounded-md text-sm font-semibold hover:from-indigo-700 hover:to-indigo-600 disabled:opacity-50 transition-all duration-200 shadow-lg shadow-indigo-500/25 active:scale-[0.98] flex items-center justify-center'>
+                  {loading && <Loader2Icon className='animate-spin h-4 w-4 mr-2' /> } 
+                  Sign in 
                 </button>
             </form>
           </div>

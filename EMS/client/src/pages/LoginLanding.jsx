@@ -1,4 +1,4 @@
-import {ArrowRightIcon, Link, ShieldIcon} from 'lucide-react'
+import {ArrowRightIcon, Link, ShieldIcon, UserIcon} from 'lucide-react'
 import LoginLeftSide from "../components/LoginLeftSide"
 
 
@@ -15,7 +15,7 @@ const LoginLanding = () => {
           to: "/login/employee",
           title:"Employee portal",
           description:"View your profile , track attendance, request time off, and access payslips.",
-          icon: ShieldIcon
+          icon: UserIcon
         }
       ]
 
